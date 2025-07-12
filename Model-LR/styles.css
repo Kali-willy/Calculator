@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f6fa;
+    --text-color: #2d3436;
+    --operator-color: #ffeaa7;
+    --special-color: #ff7675;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #a8e6cf, #dcedc1);
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+}
+
+.display {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.previous-operand {
+    color: rgba(45, 52, 54, 0.7);
+    font-size: 1.2rem;
+    min-height: 24px;
+}
+
+.current-operand {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.number {
+    background-color: white;
+    color: var(--text-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.number:hover {
+    background-color: var(--secondary-color);
+}
+
+.operator {
+    background-color: var(--operator-color);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.operator:hover {
+    background-color: #f6e58d;
+}
+
+.special {
+    background-color: var(--special-color);
+    color: white;
+}
+
+.special:hover {
+    background-color: #ff6b6b;
+}
+
+.span-2 {
+    grid-column: span 2;
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        margin: 10px;
+    }
+    
+    button {
+        padding: 15px;
+    }
+}
